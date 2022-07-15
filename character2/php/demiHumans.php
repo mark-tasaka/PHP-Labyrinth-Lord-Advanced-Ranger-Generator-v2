@@ -109,7 +109,7 @@ function demiHumanSpellMod ($race)
     
 }
 
-/*Fighter Class*/
+/*Ranger Class*/
 
 function levelLimit ($race, $level)
 {
@@ -161,13 +161,13 @@ function levelLimit ($race, $level)
     }
     else if($race === "Half-Elf")
     {
-        if($level <= 12)
+        if($level <= 8)
         {
             $characterLevel = $level;
         }
         else
         {
-            $characterLevel = 12;
+            $characterLevel = 8;
         }
     }
     else if($race === "Half-Orc")
@@ -196,33 +196,33 @@ function demiHumanTraits($species)
     
     if($species === "Dwarf")
     {
-        $traits = "Infravision 60'<br/><br/>2 in 6 chance of detecting traps, false walls, hidden constructs,
-        or noticing if passages are slopped. <br/><br/>Ability to speak the Common tongue, Dwarvish, Alignment
-        tongue, Goblin, Gnome and Kobold.<br/><br/>*Cannot use two-handed weapons or longbows.";
+        $traits = "Infravision 60'<br/>2 in 6 chance of detecting traps, false walls, hidden constructs,
+        or noticing if passages are slopped. <br/>Ability to speak the Common tongue, Dwarvish, Alignment
+        tongue, Goblin, Gnome and Kobold.<br/>*Cannot use two-handed weapons or longbows.";
     }
     else if($species === "Elf")
     {
-        $traits = "Infavision 60'<br/><br/>When actively searching, elves are able to detect hidden and secret doors on a roll of 1-2 on a d6.<br/><br/>Unaffected by the papralysis ghouls inflict.<br/><br/>Able to speak the Common tongue, the Alignment tongue, Elvish, Gnoll, Hobgoblin and Orc.";
+        $traits = "Infavision 60'<br/>When actively searching, elves are able to detect hidden and secret doors on a roll of 1-2 on a d6.<br/>Unaffected by the papralysis ghouls inflict.<br/>Able to speak the Common tongue, the Alignment tongue, Elvish, Gnoll, Hobgoblin and Orc.";
     }
     else if($species === "Gnome")
     {
-        $traits = "Infravision 60'<br/><br/>
-        2 in 6 chance of detecting decrepit or unsafe structures, knowing the current depth and direction underground and knowing if passages are sloped. <br/><br/>
+        $traits = "Infravision 60'<br/>
+        2 in 6 chance of detecting decrepit or unsafe structures, knowing the current depth and direction underground and knowing if passages are sloped. <br/>
         Ability to speak the Common tongue, Gnomish, Dwarvish, Halfling, Orc, Goblin, Kobold and the Alignment tongue.
-        <br/><br/>*Cannot use large or two-handed weapons.";
+        <br/>*Cannot use large or two-handed weapons.";
     }
     else if($species === "Halfling")
     {
-        $traits = "90% ability to hide in bushes or outdoor cover. <br/><br/>2 in 6 chance of hiding in shadows or behind cover in 
-        underground environments. <br/><br/>+1 to all missile attack rolls. <br/><br/>-2 AC bonus when attack by creatures greater than human sized.<br/><br/>*Cannot use large or two-handed weapons.";
+        $traits = "90% ability to hide in bushes or outdoor cover. <br/>2 in 6 chance of hiding in shadows or behind cover in 
+        underground environments. <br/>+1 to all missile attack rolls. <br/>-2 AC bonus when attack by creatures greater than human sized.<br/>*Cannot use large or two-handed weapons.";
     }
     else if($species === "Half-Elf")
     {
-        $traits = "Infavision 60'<br/><br/>When actively searching, half-elves are able to detect hidden and secret doors on a roll of 1-2 on a d6.<br/><br/>+4 to saving throws against the papralyzing effect of ghouls.<br/><br/>Able to speak the Common tongue, Elvish, the Alignment tongue, Gnoll, Hobgoblin and Orc.";
+        $traits = "Infavision 60'<br/>When actively searching, half-elves are able to detect hidden and secret doors on a roll of 1-2 on a d6.<br/>+4 to saving throws against the papralyzing effect of ghouls.<br/>Able to speak the Common tongue, Elvish, the Alignment tongue, Gnoll, Hobgoblin and Orc.";
     }
     else if($species === "Half-Orc")
     {
-        $traits = "Infavision 60'<br/><br/>When actively searching, half-orcs are able to detect hidden and secret doors on a roll of 1-2 on a d6.<br/><br/>Able to speak the Common tongue, the Alignment tongue, Hobgoblin and Orc.";
+        $traits = "Infavision 60'<br/>When actively searching, half-orcs are able to detect hidden and secret doors on a roll of 1-2 on a d6.<br/>Able to speak the Common tongue, the Alignment tongue, Hobgoblin and Orc.";
     }
     
     return $traits;

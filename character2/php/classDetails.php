@@ -1,6 +1,6 @@
 <?php
 
-/*Fighter */
+/*Ranger */
 
 function getHitPoints($level, $conMod)
 {
@@ -8,9 +8,9 @@ function getHitPoints($level, $conMod)
 
     if($level < 10)
     {
-        for($i = 0; $i < $level; ++$i)
+        for($i = 0; $i <= $level; ++$i)
         {
-            $levelHP = rand(3, 8);
+            $levelHP = rand(3, 6);
             $levelHP += $conMod;
     
             if($levelHP < 3)
@@ -24,9 +24,9 @@ function getHitPoints($level, $conMod)
     }
     else
     {
-        for($i = 0; $i < 10; ++$i)
+        for($i = 0; $i <= 10; ++$i)
         {
-            $levelHP = rand(3, 8);
+            $levelHP = rand(3, 6);
             $levelHP += $conMod;
     
             if($levelHP < 3)
@@ -55,9 +55,9 @@ function getAdvancedHitPoints($level, $conMod)
 
     if($level < 10)
     {
-        for($i = 0; $i < $level; ++$i)
+        for($i = 0; $i <= $level; ++$i)
         {
-            $levelHP = rand(3, 10);
+            $levelHP = rand(3, 8);
             $levelHP += $conMod;
     
             if($levelHP < 3)
@@ -71,9 +71,9 @@ function getAdvancedHitPoints($level, $conMod)
     }
     else
     {
-        for($i = 0; $i < 10; ++$i)
+        for($i = 0; $i <= 10; ++$i)
         {
-            $levelHP = rand(3, 10);
+            $levelHP = rand(3, 8);
             $levelHP += $conMod;
     
             if($levelHP < 3)
@@ -94,6 +94,33 @@ function getAdvancedHitPoints($level, $conMod)
 
     return $hitPoints;
 
+}
+
+function getHD($level)
+{
+    if($level < 10)
+    {
+        $hd = $level + 1;
+        return $hd;
+    }
+    else
+    {
+        return 10;
+    }
+}
+
+function getHDPlus($level)
+{
+    if($level < 10)
+    {
+        return "";
+    }
+    else
+    {
+        $plus = ($level - 9) * 2;
+        $plusString = strval($plus);
+        return "+" . $plusString;
+    }
 }
 
 
@@ -256,32 +283,6 @@ function saveSpells($level)
         return 6;
     }
 
-}
-
-function primeReq($abilityScore)
-{
-    
-    if($abilityScore >= 3 && $abilityScore <=5)
-        {
-            return "-10% Experience Point Adjustment (Prime Requisite)<br/><br/>";
-        }
-    else if($abilityScore >= 6 && $abilityScore <=8)
-        {
-            return "-5% Experience Point Adjustment (Prime Requisite)<br/><br/>";
-        }
-    else if($abilityScore >= 13 && $abilityScore <=15)
-        {
-            return "+5% Experience Point Adjustment (Prime Requisite)<br/><br/>";
-        }
-    else if($abilityScore >= 16 && $abilityScore <=18)
-        {
-            return "+10% Experience Point Adjustment (Prime Requisite)<br/><br/>";
-        }
-    else
-        {
-            return "";
-        }
-    
 }
 
 function secondAttack($level)
@@ -681,6 +682,114 @@ function startingAge($species)
 
 }
 
+function rangerMessage ($level)
+{
+    $message = "";
+    
+    if($level >= 1 && $level <= 7)
+    {
+        $message = "*Receives +" . $level . " damage bonus against goblinoids and giants (bugbears, orcs, kobolds, 
+        goblins, hobgoblins, ogres, ettins, all giants and trolls).<br/>
+        *Only surprised on 1 on 1d6; may surprise others on 1-3 on 1d6.<br/>
+        *Able to track creatures in the wilderness and underground environments
+        (wilderness base chance is 90%; underground base chance is 65%).<br/>
+        ";   
+    }
+    else if($level == 8)
+    {
+        $message = "*Receives +" . $level . " damage bonus against goblinoids and giants (bugbears, orcs, kobolds, 
+        goblins, hobgoblins, ogres, ettins, all giants and trolls).<br/>
+        *Only surprised on 1 on 1d6; may surprise others on 1-3 on 1d6.<br/>
+        *Able to track creatures in the wilderness and underground environments
+        (wilderness base chance is 90%; underground base chance is 65%).<br/>
+        *Able to cast Druid Spells.<br/>
+        ";   
+    }
+    else if($level == 9)
+    {
+        $message = "*Receives +" . $level . " damage bonus against goblinoids and giants (bugbears, orcs, kobolds, 
+        goblins, hobgoblins, ogres, ettins, all giants and trolls).<br/>
+        *Only surprised on 1 on 1d6; may surprise others on 1-3 on 1d6.<br/>
+        *Able to track creatures in the wilderness and underground environments
+        (wilderness base chance is 90%; underground base chance is 65%).<br/>
+        *Able to cast Druid and Magic-User Spells.<br/>
+        ";   
+    }
+    else if($level >= 10)
+    {
+        $message = "*Receives +" . $level . " damage bonus against goblinoids and giants (bugbears, orcs, kobolds, 
+        goblins, hobgoblins, ogres, ettins, all giants and trolls).<br/>
+        *Only surprised on 1 on 1d6; may surprise others on 1-3 on 1d6.<br/>
+        *Able to track creatures in the wilderness and underground environments
+        (wilderness base chance is 90%; underground base chance is 65%).<br/>
+        *Able to cast Druid and Magic-User Spells.<br/>
+        *Able to employ any magical item, excluding scrolls, which confers the
+         ability to employ clairaudience, clairvoyance, ESP or telepathy.<br/>
+         *Attains 3d6 1st and 2nd level followers from the ranger, cleric, fighter or
+         magic-user classes (determined randomly; no more than 2 ranger followers).
+        ";   
+    }
+    
+    return $message;
+}
+
+function rangerIntelligenceMin($intelligence)
+{
+    if($intelligence < 12)
+    {
+        return 12;
+    }
+    else
+    {
+        return $intelligence;
+    }
+}
+
+function rangerWisdomMin($wisdom)
+{
+    if($wisdom < 12)
+    {
+        return 12;
+    }
+    else
+    {
+        return $wisdom;
+    }
+}
+
+function rangerConstitutionMin($constitution)
+{
+    if($constitution < 15)
+    {
+        return 15;
+    }
+    else
+    {
+        return $constitution;
+    }
+}
+
+
+function primeReq($strength, $intelligence, $wisdom)
+{
+    if($strength > 12 && $intelligence > 12 && $wisdom > 12)
+    {
+        if($strength > 15 && $intelligence > 15 && $wisdom > 15)
+        {
+            return "+10% Experience Point Adjustment (Prime Requisite)<br/>";
+        }
+        else
+        {
+            return "+5% Experience Point Adjustment (Prime Requisite)<br/>";
+
+        }
+    }
+    else
+    {
+        return "";
+    }
+    
+}
 
 
 ?>

@@ -1,95 +1,90 @@
 <?php
-//Paladin Spells
+//Ranger Spells
 
-function spellsLevel1($level)
+function druidLevel1Spell ($level)
 {
-    if($level == 9)
-    {
-        return "1";
-    }
-    else if($level >= 10 && $level <= 14)
-    {
-        return "2";
-    }
-    else if($level >= 15)
-    {
-        return "3";
-    }
-    else
-    {
-        return "-";
-    }
-
-}
-
-
-function spellsLevel2($level)
-{
-    if($level == 11)
-    {
-        return "1";
-    }
-    else if($level >= 12 && $level <= 15)
-    {
-        return "2";
-    }
-    else if($level >= 16)
-    {
-        return "3";
-    }
-    else
-    {
-        return "-";
-    }
-
-}
-
-
-function spellsLevel3($level)
-{
+    $spell = "-";
     
-    if($level >= 13 && $level <= 16)
+    if($level <= 8 && $level >= 9)
     {
-        return "1";
+        $spell = "1";
     }
-    else if($level == 17)
+    else if($level >=10)
     {
-        return "2";
+        $spell = "2";
     }
-    else if($level >= 18)
-    {
-        return "3";
-    }
-    else
-    {
-        return "-";
-    }
-
-}
-
-
-
-function spellsLevel4($level)
-{
     
-    if($level >= 15 && $level <= 18)
-    {
-        return "1";
-    }
-    else if($level == 19)
-    {
-        return "2";
-    }
-    else if($level >= 20)
-    {
-        return "3";
-    }
-    else
-    {
-        return "-";
-    }
-
+    return $spell;
 }
+
+
+function druidLevel2Spell ($level)
+{
+    $spell = "-";
+    
+    if($level <= 10 && $level >= 11)
+    {
+        $spell = "1";
+    }
+    else if($level >=12)
+    {
+        $spell = "2";
+    }
+    
+    return $spell;
+}
+
+
+
+function druidLevel3Spell ($level)
+{
+    $spell = "-";
+    
+    if($level == 16)
+    {
+        $spell = "1";
+    }
+    else if($level >=17)
+    {
+        $spell = "2";
+    }
+    
+    return $spell;
+}
+
+function magicUserLevel1Spell ($level)
+{
+    $spell = "-";
+    
+    if($level <= 9 && $level >= 10)
+    {
+        $spell = "1";
+    }
+    else if($level >=11)
+    {
+        $spell = "2";
+    }
+    
+    return $spell;
+}
+
+
+function magicUserLevel2Spell ($level)
+{
+    $spell = "-";
+    
+    if($level <= 13 && $level >= 14)
+    {
+        $spell = "1";
+    }
+    else if($level >=15)
+    {
+        $spell = "2";
+    }
+    
+    return $spell;
+}
+
 
 
 ?>
