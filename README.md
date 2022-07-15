@@ -3,6 +3,18 @@ The Labyrinth Lord Advanced Companion Ranger Character Generator Version 2 is th
 
 --------------
 
+A live version of the Labyrinth Lord Advanced Companion Ranger Character Generator Version 2 is available at:
+
+https://www.oldschooladventures.org/ll/classes2/ranger/
+
+--------------
+
+
+Update 1.01: 2022-07-15
+
+Updates to ranger.php, ranger.css, classDetails.php, demiHumans.php, spells.php, weapons.php, and xp.php. A link to a live version of the Labyrinth Lord Advanced Companion Ranger Character Generator Version 2 has been added.
+
+
 Initial commit: 2022-07-12
 
 The intial commit for the Labyrinth Lord Advanced Companion Ranger Character Generator Version 2.
